@@ -3,5 +3,6 @@
 -module(geometry). 
 -export([area/1]). 
 
-area({X, X}) -> io:format("square ~p~n", [X * X]);
-area({X, Y}) -> io:format("rectangle ~p~n", [X * Y]). 
+area({rectangle, Width, Height}) -> Width * Height;  %rectangle
+area({circle, R}) -> math:pi() * R * R;  %circle
+area({square, X}) -> X * X.  %square
